@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('sample/upload', [SampleController::class, 'index']);
-// Route::get('sample/upload', function(){return view('sample.upload');});
+// Route::get('sample/upload', function (){
+//     return view('sample.upload', compact('result'));
+// });
 Route::post('sample/upload', [SampleController::class, 'upload']);
 

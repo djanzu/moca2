@@ -8,7 +8,8 @@ class SampleController extends Controller
 {
     public function index()
     {
-        return view('sample.upload');
+        $result = "";
+        return view('sample.upload', compact('result'));
     }
 
     public function upload_local(Request $request)
