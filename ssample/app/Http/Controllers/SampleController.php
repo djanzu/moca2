@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
 
 class SampleController extends Controller
 {
@@ -38,9 +39,8 @@ class SampleController extends Controller
         $file = $request->file('a');
 
         if (!is_null($file)) {
-
-            $path = $request->file('a')->store('muemues', 'conoha'); 
-
+            // $path = $request->file('a')->store('muemues', 'conoha'); 
+            $path = Storage::disk('s3')->putFile('moca', $file);
         }
 
         $result = "uploaded.";
